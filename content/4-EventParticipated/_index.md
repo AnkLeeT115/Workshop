@@ -9,20 +9,14 @@ pre: " <b> 4. </b> "
 During my internship, I had the opportunity to participate in two technology events organized by the company. These events broadened my knowledge of Artificial Intelligence (AI), Amazon Web Services (AWS), Cloud Computing, software development, cybersecurity, career orientation, and teamwork. They also provided valuable real-world insights into current technology trends and industry practices.
 
 ### [Event 1](4.1-Event1/)
+&emsp;**Event Name:** FCAJ Community Day 2026
 
-&emsp;**Event Name:** AI & Cloud Workshop
+&emsp;**Date & Time:** May 9, 2026
 
-&emsp;**Date:** May 9, 2026
+&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 
-&emsp;**Time:** 08:30 AM – 12:00 PM
+&emsp;**Role:** Attendee
 
-&emsp;**Location:** 26th Floor, Bitexco Financial Tower, 02 Hai Trieu Street, Sai Gon Ward, Ho Chi Minh City, Vietnam
-
-&emsp;**Role:** Participant
-
-&emsp;**Brief Description:** The workshop focused on modern AI and cloud technologies, covering topics such as Context in AI, Amazon Quick, Amazon CloudFront, product development in Hackathons, the non-deterministic nature of Large Language Models (LLMs), and enterprise Multi-Agent systems.
-
-&emsp;**Outcomes and Benefits:** I gained a better understanding of how context improves AI responses, the role of cloud services in application deployment, and the importance of testing, implementing guardrails, and defining clear objectives when building AI-powered systems.
 
 ---
 
@@ -36,11 +30,15 @@ During my internship, I had the opportunity to participate in two technology eve
 
 &emsp;**Role:** Participant
 
-&emsp;**Brief Description:** This workshop featured technical presentations and live demonstrations on integrating Godot with AWS WebSocket, Docker, Network Intrusion Detection Systems (NIDS) using Machine Learning, the career path of a System Administrator (Sysadmin), GraphRAG on AWS, and effective teamwork in software development.
+---
+### [Event 3](4.2-Event2/)
+&emsp;**Event Name:** FCAJ Soft Skills & Frontend AWS Meet
 
-&emsp;**Main Activities:** Attended technical presentations, explored system architectures through live demonstrations, and learned from industry professionals about career development and real-world technology applications.
+&emsp;**Date & Time:** June 13, 2026
 
-&emsp;**Outcomes and Benefits:** I expanded my practical knowledge of cloud architecture, containerization with Docker, machine learning applications in cybersecurity, GraphRAG on AWS, and collaborative teamwork. These experiences strengthened my technical foundation and provided clearer career direction in the field of Information Technology.
+&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
+
+&emsp;**Role:** Attendee
 
 ---
 

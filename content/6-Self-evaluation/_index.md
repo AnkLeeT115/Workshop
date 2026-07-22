@@ -1,39 +1,34 @@
 ---
-title: "Self-Assessment"
+title: "Self-Evaluation"
 date: 2024-01-01
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+During my internship at **Amazon Web Services Vietnam Co., Ltd.** from **May 5, 2026** to **July 30, 2026**, I had the opportunity to learn, practice, and apply the knowledge acquired at university in a real-world working environment.
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+Throughout the internship, I worked on the **Serverless E-commerce Backend for Genuine Scale Models Store** workshop project. This experience helped me strengthen my knowledge of **AWS Cloud services, Serverless architecture, backend development, API design, cloud deployment, and software development workflows**. It also improved my technical skills, teamwork, problem-solving abilities, and technical documentation writing.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+I always tried to complete assigned tasks on time, follow the company's regulations, and actively communicate with mentors and teammates to improve work efficiency and continuously develop my professional skills.
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+| No. | Criteria | Description | Good | Fair | Average |
+| --- | -------- | ----------- | ---- | ---- | ------- |
+| 1 | **Technical Knowledge & Skills** | Understanding of professional knowledge, practical application, tool usage, and work quality | ☐ | ✅ | ☐ |
+| 2 | **Learning Ability** | Ability to learn new knowledge quickly and effectively | ☐ | ✅ | ☐ |
+| 3 | **Proactiveness** | Taking initiative in learning and completing assigned tasks | ✅ | ☐ | ☐ |
+| 4 | **Responsibility** | Completing tasks on time while ensuring quality | ☐ | ✅ | ☐ |
+| 5 | **Discipline** | Following company regulations, schedules, and working procedures | ☐ | ☐ | ✅ |
+| 6 | **Willingness to Improve** | Accepting feedback and continuously improving | ☐ | ✅ | ☐ |
+| 7 | **Communication Skills** | Presenting ideas and reporting work clearly | ☐ | ✅ | ☐ |
+| 8 | **Teamwork** | Collaborating effectively with teammates | ✅ | ☐ | ☐ |
+| 9 | **Professionalism** | Respecting colleagues, mentors, and workplace culture | ✅ | ☐ | ☐ |
+| 10 | **Problem-Solving Skills** | Identifying issues, proposing solutions, and thinking creatively | ☐ | ✅ | ☐ |
+| 11 | **Overall Performance** | Overall evaluation of the internship period | ☐ | ✅ | ☐ |
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+### Areas for Improvement
 
-### Needs Improvement
-
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+- Improve self-discipline and consistently follow company regulations and organizational policies.
+- Strengthen problem-solving and analytical thinking skills.
+- Enhance communication skills in both daily interactions and professional working environments.
+- Continue expanding knowledge of AWS Cloud services, Serverless architecture, and modern software development practices.
