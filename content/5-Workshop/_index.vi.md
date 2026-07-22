@@ -60,7 +60,6 @@ Workshop sử dụng Payment URL mô phỏng và không thực hiện giao dịc
 3. [Triển khai Frontend với S3 và CloudFront](5.3-S3-vpc/)
 4. [Xác thực người dùng với Amazon Cognito](5.4-S3-onprem/)
 5. [Tạo Payment API](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
 
 #### Kết quả mong đợi
 
