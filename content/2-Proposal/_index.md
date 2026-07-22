@@ -6,12 +6,12 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# MoMoPay AWS - AWS Payment Processing System
+# CloudPay - AWS Payment Processing System
 ## Serverless Payment Architecture on AWS
 
 ### 1. Executive Summary
 
-MoMoPay AWS implements a secure and scalable cloud-native payment processing system for an e-commerce platform selling genuine scale models. The payment architecture is built entirely on AWS serverless services and integrates with the MoMo payment gateway to provide secure online transactions.
+CloudPay implements a secure and scalable cloud-native payment processing system for an e-commerce platform selling genuine scale models. The payment architecture is built entirely on AWS serverless services and integrates with the MoMo payment gateway to provide secure online transactions.
 
 The solution leverages Amazon Cognito for user authentication, Amazon API Gateway and AWS Lambda for business logic, Amazon SQS for asynchronous processing, Amazon SNS for notifications, Amazon RDS for transaction storage, and Amazon CloudWatch/X-Ray for monitoring. The architecture ensures high availability, fault tolerance, and real-time payment processing while minimizing operational costs.
 

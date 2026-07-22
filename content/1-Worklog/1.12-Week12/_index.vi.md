@@ -10,7 +10,7 @@ pre: " <b> 1.12. </b> "
 
 ## Mục tiêu tuần 12
 
-- Hoàn thiện các tính năng backend cốt lõi cho hệ thống **MoMoPay AWS**.
+- Hoàn thiện các tính năng backend cốt lõi cho hệ thống **CloudPay AWS**.
 - Phát triển tính năng tạo thanh toán, xử lý webhook, quản lý giao dịch và thông báo.
 - Thực hiện kiểm thử toàn hệ thống, tối ưu hóa và chuẩn bị triển khai cuối cùng.
 

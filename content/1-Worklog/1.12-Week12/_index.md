@@ -10,7 +10,7 @@ pre: " <b> 1.12. </b> "
 
 ## Week 12 Objectives
 
-- Complete core backend features for the **MoMoPay AWS Payment System**.
+- Complete core backend features for the **CloudPay AWS Payment System**.
 - Develop payment creation, webhook processing, transaction management, and notification features.
 - Perform full system testing, optimization, and prepare for final deployment.
 

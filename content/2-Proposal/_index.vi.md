@@ -6,12 +6,12 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# MoMoPay AWS - Hệ thống thanh toán trên AWS
+# CloudPay - Hệ thống thanh toán trên AWS
 ## Kiến trúc thanh toán Serverless sử dụng AWS
 
 ### 1. Tổng quan dự án
 
-MoMoPay AWS xây dựng một hệ thống thanh toán trực tuyến an toàn, có khả năng mở rộng và hoạt động theo kiến trúc Serverless trên nền tảng AWS. Hệ thống được tích hợp với cổng thanh toán MoMo nhằm xử lý các giao dịch thanh toán của khách hàng một cách nhanh chóng và đáng tin cậy.
+CloudPay xây dựng một hệ thống thanh toán trực tuyến an toàn, có khả năng mở rộng và hoạt động theo kiến trúc Serverless trên nền tảng AWS. Hệ thống được tích hợp với cổng thanh toán MoMo nhằm xử lý các giao dịch thanh toán của khách hàng một cách nhanh chóng và đáng tin cậy.
 
 Kiến trúc sử dụng Amazon Cognito để xác thực người dùng, Amazon API Gateway và AWS Lambda để xử lý nghiệp vụ, Amazon SQS để xử lý bất đồng bộ, Amazon SNS để gửi thông báo, Amazon RDS để lưu trữ dữ liệu giao dịch và Amazon CloudWatch cùng AWS X-Ray để giám sát toàn bộ hệ thống.
 

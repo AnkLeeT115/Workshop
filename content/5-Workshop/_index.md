@@ -1,27 +1,75 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-19
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-# Secure Hybrid Access to S3 using VPC Endpoints
+
+# Build the CloudPay Payment System on AWS
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+In this workshop, you will build a simple payment system named **CloudPay** on AWS.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+The system allows:
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+- Customers to sign in to the application.
+- Customers to submit payment requests.
+- Administrators to sign in to the admin dashboard.
+- Amazon API Gateway to receive payment requests.
+- AWS Lambda to process transactions.
+- Amazon CloudWatch to store execution logs.
+
+The general architecture is:
+
+```text
+Customer or Administrator
+          ↓
+Amazon CloudFront
+          ↓
+Amazon S3
+          ↓
+Amazon Cognito
+          ↓
+Amazon API Gateway
+          ↓
+AWS Lambda
+          ↓
+Simulated Payment URL
+```
+
+The workshop uses the following AWS services:
+
+- **Amazon S3**: Hosts the Customer Web Application and Admin Dashboard.
+- **Amazon CloudFront**: Distributes the frontend applications.
+- **Amazon Cognito**: Manages user accounts and sign-in.
+- **Amazon API Gateway**: Receives payment requests.
+- **AWS Lambda**: Processes requests and creates transactions.
+- **Amazon CloudWatch**: Stores and displays execution logs.
+- **AWS Identity and Access Management (IAM)**: Controls access between AWS services.
+
+{{% notice note %}}
+This workshop uses a simulated Payment URL and does not process real financial transactions.
+{{% /notice %}}
 
 #### Content
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [Workshop Overview](5.1-Workshop-overview/)
+2. [Prerequisites](5.2-Prerequisite/)
+3. [Deploy the Frontend with S3 and CloudFront](5.3-S3-vpc/)
+4. [User Authentication with Amazon Cognito](5.4-S3-onprem/)
+5. [Create the Payment API](5.5-Policy/)
+6. [Clean Up Resources](5.6-Cleanup/)
+
+#### Expected Results
+
+After completing this workshop:
+
+- The Customer Web Application is deployed on AWS.
+- The Admin Dashboard is deployed on AWS.
+- Users can sign in using Amazon Cognito.
+- API Gateway can receive payment requests.
+- Lambda can generate a Transaction ID and a simulated Payment URL.
+- Execution logs can be reviewed in CloudWatch.
+- Workshop resources can be deleted after completion.
