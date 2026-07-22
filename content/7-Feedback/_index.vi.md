@@ -33,7 +33,7 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 ### Một số câu hỏi khác
 
 **Điều bạn hài lòng nhất trong thời gian thực tập?**  
-Mình hài lòng nhất khi được áp dụng kiến thức AWS từ module và workshop vào dự án **Uchimi StudyGamification**. Các task như CloudFormation, Lambda, DynamoDB và các dịch vụ AWS liên quan frontend giúp mình thấy rõ sự tiến bộ. Các event cộng đồng (Community Day, Soft Skills & Frontend Meet, AWS Knowledge Battle) cũng mang lại động lực và cảm giác gắn kết mạnh hơn.
+Mình hài lòng nhất khi được áp dụng kiến thức AWS từ module và workshop vào dự án **CloudPay**. Các task như CloudFormation, Lambda, DynamoDB và các dịch vụ AWS liên quan frontend giúp mình thấy rõ sự tiến bộ. Các event cộng đồng (Community Day, Soft Skills & Frontend Meet, AWS Knowledge Battle) cũng mang lại động lực và cảm giác gắn kết mạnh hơn.
 
 **Điều bạn nghĩ công ty cần cải thiện cho các thực tập sinh sau?**  
 Nên có checkpoint hàng tuần rõ ràng hơn với mentor để review tiến độ, và hướng dẫn sớm hơn về cách ước lượng thời gian làm task. Một checklist onboarding ngắn về công cụ AWS và quy ước dự án cũng sẽ giúp thực tập sinh mới thích nghi nhanh hơn.
@@ -45,13 +45,9 @@ Có, mình sẽ khuyên bạn bè tham gia. FCAJ kết hợp làm dự án thự
 
 ### Đề xuất & mong muốn
 
-**Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?**  
-- Thêm các buổi demo ngắn để nhóm chia sẻ tiến độ dự án mỗi tuần.  
+**Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?**    
 - Có lộ trình học gợi ý gắn module với milestone dự án.  
 - Tổ chức thêm hoạt động team bonding để mọi người kết nối ngoài công việc.
-
-**Bạn có muốn tiếp tục chương trình này trong tương lai?**  
-Có. Nếu được, mình muốn tiếp tục đóng góp cho dự án và học hỏi cùng cộng đồng FCAJ / AWS.
 
 **Góp ý khác (tự do chia sẻ):**  
 Cảm ơn mentor, admin và cộng đồng FCAJ đã tạo môi trường học tập vừa chuyên nghiệp vừa khích lệ. Kỳ thực tập giúp mình phát triển kỹ năng kỹ thuật, teamwork và định hướng nghề nghiệp. Mình rất biết ơn vì được học hỏi, được thử-sai an toàn và cải thiện từng tuần.

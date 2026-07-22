@@ -33,7 +33,7 @@ The company provides an internship allowance and offers flexible working hours w
 ### Additional Questions
 
 **What did you find most satisfying during your internship?**  
-I was most satisfied when I could apply AWS knowledge from modules and workshops directly into the **Uchimi StudyGamification** project. Completing tasks such as CloudFormation, Lambda, DynamoDB, and frontend-related AWS services helped me see clear progress. Community events (Community Day, Soft Skills & Frontend Meet, AWS Knowledge Battle) also gave me motivation and a stronger sense of belonging.
+I was most satisfied when I could apply AWS knowledge from modules and workshops directly into the **CloudPay** project. Completing tasks such as CloudFormation, Lambda, DynamoDB, and frontend-related AWS services helped me see clear progress. Community events (Community Day, Soft Skills & Frontend Meet, AWS Knowledge Battle) also gave me motivation and a stronger sense of belonging.
 
 **What do you think the company should improve for future interns?**  
 It would be helpful to have a clearer weekly checkpoint with mentors for progress review, and more early guidance on estimating task time. A short onboarding checklist for common AWS tools and project conventions would also help new interns adapt faster.
@@ -46,12 +46,9 @@ Yes, I would strongly recommend this program. FCAJ combines real project work, s
 ### Suggestions & Expectations
 
 **Do you have any suggestions to improve the internship experience?**  
-- Add more short demo sessions where teams share weekly project progress.  
 - Provide a recommended learning path that maps modules to project milestones.  
 - Organize more team bonding activities so interns can connect beyond work tasks.
 
-**Would you like to continue this program in the future?**  
-Yes. If possible, I would like to continue contributing to the project and keep learning with the FCAJ / AWS community.
 
 **Any other comments (free sharing):**  
 Thank you to the mentors, admins, and FCAJ community for creating a learning environment that is both professional and encouraging. This internship helped me grow in technical skills, teamwork, and career direction. I am grateful for the opportunity to learn, make mistakes safely, and improve every week.
