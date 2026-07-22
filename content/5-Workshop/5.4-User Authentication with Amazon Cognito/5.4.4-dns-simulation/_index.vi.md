@@ -1,118 +1,453 @@
 ---
-title : "Mô phỏng On-premises DNS "
-date : 2024-01-01
-weight : 4
-chapter : false
-pre : " <b> 5.4.4 </b> "
+title: "Kiểm tra và tích hợp Payment API"
+date: 2026-07-19
+weight: 4
+chapter: false
+pre: " <b> 5.4.4. </b> "
 ---
 
- AWS PrivateLink endpoint có một địa chỉ IP cố định trong từng AZ nơi chúng được triển khai, trong suốt thời gian tồn tại của endpoint (cho đến khi endpoint bị xóa). Các địa chỉ IP này được gắn vào Elastic network interface (ENI). AWS khuyến nghị sử dụng DNS để resolve địa chỉ IP cho endpoint để các ứng dụng downstream sử dụng địa chỉ IP mới nhất khi ENIs được thêm vào AZ mới hoặc bị xóa theo thời gian.
+Trong phần này, bạn sẽ kiểm tra **Payment API** của hệ thống CloudPay và kết nối API với **Customer Web Application**.
 
-Trong phần này, bạn sẽ tạo một quy tắc chuyển tiếp (forwarding rule) để gửi các yêu cầu resolve DNS từ môi trường truyền thống (mô phỏng) đến Private Hosted Zone trên Route 53. Phần này tận dụng cơ sở hạ tầng do CloudFormation triển khai trong phần Chuẩn bị môi trường.
+Payment API sử dụng:
 
-#### Tạo DNS Alias Records cho Interface endpoint
-1. Click link để đi đến [Route 53 management console](https://us-east-1.console.aws.amazon.com/route53/v2/hostedzones?region=us-east-1#) (Hosted Zones section).  Mẫu CloudFormation mà bạn triển khai trong phần Chuẩn bị môi trường đã tạo Private Hosted Zone này. Nhấp vào tên của Private Hosted Zone, s3.us-east-1.amazonaws.com:
+- **Amazon API Gateway** để tiếp nhận yêu cầu.
+- **AWS Lambda** để xử lý logic thanh toán.
+- **Amazon CloudWatch** để lưu và kiểm tra log.
+- **Amazon CloudFront** để phân phối giao diện Customer Web.
 
-![hosted zone](/images/5-Workshop/5.4-S3-onprem/hosted-zone.png)
+Luồng hoạt động của hệ thống:
 
-2. Tạo 1 record mới trong Private Hosted Zone:
-
-![Create record](/images/5-Workshop/5.4-S3-onprem/create-record1.png)
-
-+ Giữ nguyên Record name và record type
-+ Alias Button: click để enable
-+ Route traffic to: Alias to VPC Endpoint
-+ Region: US East (N. Virginia) [us-east-1]
-+ Chọn endpoint: Paste tên (Regional VPC Endpoint DNS) bạn đã lưu lại ở phần 4.3
-
-![record1](/images/5-Workshop/5.4-S3-onprem/record1.png)
-
-3. Click Add another record, và add 1 cái record thứ 2 sử dụng những thông số sau:
-+ Record name: *.
-+ Record type: giữ giá trị default (type A)
-+ Alias Button: Click để enable
-+ Route traffic to: Alias to VPC Endpoint
-+ Region: US East (N. Virginia) [us-east-1]
-+ Chọn endpoint: Paste tên (Regional VPC Endpoint DNS) bạn đã lưu lại ở phần 4.3
-+ Click **Create records** 
-
-![record 2](/images/5-Workshop/5.4-S3-onprem/record2.png)
-
-Record mới xuất hiện trên giao diện Route 53.
-
-![result](/images/5-Workshop/5.4-S3-onprem/result.png)
-
-#### Tạo một Resolver Forwarding Rule
-
-**Route 53 Resolver Forwarding Rules** cho phép bạn chuyển tiếp các DNS queries từ VPC của bạn đến các nguồn khác để resolve name. Bên ngoài môi trường workshop, bạn có thể sử dụng tính năng này để chuyển tiếp các DNS queries từ VPC của bạn đến các máy chủ DNS chạy trên on-premises. Trong phần này, bạn sẽ mô phỏng một on-premises conditional forwarder bằng cách tạo một forwarding rule để chuyển tiếp các DNS queries for Amazon S3 đến một Private Hosted Zone chạy trong "VPC Cloud" để resolve PrivateLink interface endpoint regional DNS name.
-
-1. Từ giao diện  **Route 53**, chọn **Inbound endpoints** trên thanh bên trái
-
-2. Trong giao diện **Inbound endpoint**, Chọn ID của Inbound endpoint.
-
-![Inbound endpoint](/images/5-Workshop/5.4-S3-onprem/route53-1.png)
-
-3. Sao chép 2 địa chỉ IP trong danh sách vào trình chỉnh sửa.
-
-![Ip addresses](/images/5-Workshop/5.4-S3-onprem/route53-2.png)
-
-4. Từ giao diện Route 53, chọn  **Resolver** > **Rules** và chọn **Create rule**
-
-![Ip addresses](/images/5-Workshop/5.4-S3-onprem/route53-3.png)
-
-5. Trong giao diện **Create rule**
-
-+ Name: myS3Rule
-+ Rule type: Forward
-+ Domain name: s3.us-east-1.amazonaws.com
-
-![create rule](/images/5-Workshop/5.4-S3-onprem/route53-4.png)
-
-+ VPC: VPC On-prem
-+ Outbound endpoint: VPCOnpremOutboundEndpoint
-
-![create rule](/images/5-Workshop/5.4-S3-onprem/route53-5.png)
-
-+ Target IP Addresses: điền cả hai IP bạn đã lưu trữ trên trình soạn thảo (inbound endpoint addresses) và sau đó chọn **Submit**
-
-![create rule](/images/5-Workshop/5.4-S3-onprem/route53-6.png)
-
-Bạn đã tạo thành công resolver forwarding rule. 
-
-![create rule](/images/5-Workshop/5.4-S3-onprem/route53-7.png)
-
-#### Kiểm tra on-premises DNS mô phỏng.
-
-1. Kết nối đến **Test-Interface-Endpoint EC2 instance** với **Session Manager**
-
-![create rule](/images/5-Workshop/5.4-S3-onprem/test1.png)
-
-2. Kiểm tra DNS resolution. Lệnh dig sẽ trả về địa chỉ IP được gán cho VPC endpoint interface đang chạy trên VPC (địa chỉ IP của bạn sẽ khác):
-
+```text
+Customer Web
+    ↓
+Amazon CloudFront
+    ↓
+Amazon API Gateway
+    ↓
+AWS Lambda
+    ↓
+Kết quả giao dịch
 ```
-dig +short s3.us-east-1.amazonaws.com 
-```
+
 {{% notice note %}}
-Các địa chỉ IP được trả về là các địa chỉ IP VPC enpoint, KHÔNG phải là các địa chỉ IP Resolver mà bạn đã dán từ trình chỉnh sửa văn bản của mình. Các địa chỉ IP của  Resolver endpoint  và  VPC endpoin trông giống nhau vì chúng đều từ khối CIDR VPC Cloud.
+CloudPay hiện chỉ mô phỏng quá trình tạo giao dịch và chưa kết nối với cổng thanh toán thực tế.
 {{% /notice %}}
 
-![create rule](/images/5-Workshop/5.4-S3-onprem/dig.png)
+#### Kiểm tra Lambda Function
 
-3. Truy cập vào menu VPC (phần Endpoints), chọn S3 interface endpoint. Nhấp vào tab Subnets và xác nhận rằng các địa chỉ IP được trả về bởi lệnh Dig khớp với VPC endpoint:
+1. Truy cập [AWS Lambda Console](https://console.aws.amazon.com/lambda/).
 
-![create rule](/images/5-Workshop/5.4-S3-onprem/subnet.png)
+2. Trong danh sách Lambda Function, chọn:
 
-4. Hãy quay lại shell của bạn và sử dụng AWS CLI để kiểm tra danh sách các bucket S3 của bạn:
-
-```
-aws s3 ls --endpoint-url https://s3.us-east-1.amazonaws.com
+```text
+cloudpay-create-payment
 ```
 
-![create rule](/images/5-Workshop/5.4-S3-onprem/endpoint.png)
+3. Kiểm tra trạng thái và mã nguồn đang được triển khai.
 
-5. Kết thúc phiên làm việc của Session Manager của bạn:
+![Kiểm tra Lambda Function](/images/5-Workshop/5.4-CloudPay/check-lambda.png)
 
-![create rule](/images/5-Workshop/5.4-S3-onprem/terminal.png)
+Lambda Function thực hiện các chức năng:
 
+- Nhận `orderId` và `amount`.
+- Kiểm tra dữ liệu đầu vào.
+- Tạo mã giao dịch.
+- Gán trạng thái ban đầu là `PENDING`.
+- Trả về đường dẫn thanh toán mô phỏng.
 
-Trong phần này, bạn đã tạo một  **Interface Endpoint**  cho Amazon S3. Điểm cuối này có thể được truy cập từ on-premises thông qua Site-to-Site VPN hoặc AWS Direct Connect. Các điểm cuối Route 53 Resolver outbound giả lập chuyển tiếp các yêu cầu DNS từ on-premises đến một Private Hosted Zone đang chạy trên đám mây. Các điểm cuối Route 53 inbound nhận yêu cầu giải quyết và trả về một phản hồi chứa địa chỉ IP của  **Interface Endpoint**  VPC. Sử dụng DNS để giải quyết các địa chỉ IP của điểm cuối cung cấp tính sẵn sàng cao trong trường hợp một Availability Zone gặp sự cố.
+Ví dụ kết quả trả về:
+
+```json
+{
+  "transactionId": "TRANSACTION_ID",
+  "orderId": "ORDER-1001",
+  "amount": 250000,
+  "status": "PENDING",
+  "paymentUrl": "https://payment.cloudpay.demo/TRANSACTION_ID"
+}
+```
+
+4. Chọn **Deploy** nếu mã nguồn vừa được cập nhật.
+
+#### Kiểm tra Payment API
+
+1. Truy cập [Amazon API Gateway Console](https://console.aws.amazon.com/apigateway/).
+
+2. Chọn HTTP API của hệ thống CloudPay.
+
+3. Trong menu bên trái, chọn **Routes**.
+
+4. Kiểm tra route:
+
+```text
+POST /payments
+```
+
+![Kiểm tra Payment Route](/images/5-Workshop/5.4-CloudPay/payment-route.png)
+
+5. Chọn route `POST /payments`.
+
+6. Kiểm tra Integration Target được kết nối với Lambda Function:
+
+```text
+cloudpay-create-payment
+```
+
+![Kiểm tra Lambda Integration](/images/5-Workshop/5.4-CloudPay/lambda-integration.png)
+
+7. Chọn **Stages** và mở stage:
+
+```text
+$default
+```
+
+8. Sao chép **Invoke URL** của API.
+
+Ví dụ:
+
+```text
+https://API_ID.execute-api.us-east-1.amazonaws.com
+```
+
+![Sao chép Invoke URL](/images/5-Workshop/5.4-CloudPay/invoke-url.png)
+
+#### Kiểm tra cấu hình CORS
+
+Customer Web được triển khai qua Amazon CloudFront nên API Gateway cần cho phép frontend gửi yêu cầu đến API.
+
+1. Trong HTTP API, chọn **CORS**.
+
+2. Kiểm tra các giá trị sau:
+
+```text
+Access-Control-Allow-Origin:
+https://CUSTOMER_CLOUDFRONT_DOMAIN
+```
+
+```text
+Access-Control-Allow-Headers:
+Content-Type,Authorization
+```
+
+```text
+Access-Control-Allow-Methods:
+POST,OPTIONS
+```
+
+3. Chọn **Save** để lưu cấu hình.
+
+![Cấu hình CORS](/images/5-Workshop/5.4-CloudPay/configure-cors.png)
+
+{{% notice warning %}}
+Trong môi trường thực tế, không nên sử dụng `*` cho `Access-Control-Allow-Origin` đối với API xử lý dữ liệu nhạy cảm. Chỉ nên cho phép domain frontend của hệ thống.
+{{% /notice %}}
+
+#### Kiểm tra API bằng AWS CloudShell
+
+1. Mở **AWS CloudShell** trên AWS Management Console.
+
+2. Chạy lệnh sau và thay `API_INVOKE_URL` bằng Invoke URL đã sao chép:
+
+```bash
+curl -X POST \
+  "API_INVOKE_URL/payments" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "orderId": "ORDER-1001",
+    "amount": 250000
+  }'
+```
+
+3. Kiểm tra kết quả trả về.
+
+Kết quả mong đợi:
+
+```json
+{
+  "transactionId": "TRANSACTION_ID",
+  "orderId": "ORDER-1001",
+  "amount": 250000,
+  "status": "PENDING",
+  "paymentUrl": "https://payment.cloudpay.demo/TRANSACTION_ID"
+}
+```
+
+![Kiểm tra API thành công](/images/5-Workshop/5.4-CloudPay/api-success.png)
+
+Kết quả trên cho thấy:
+
+- API Gateway đã nhận yêu cầu.
+- API Gateway đã gọi Lambda Function.
+- Lambda đã xử lý dữ liệu thành công.
+- Hệ thống đã tạo mã giao dịch.
+- Trạng thái giao dịch ban đầu là `PENDING`.
+
+#### Kiểm tra dữ liệu không hợp lệ
+
+1. Kiểm tra trường hợp thiếu `orderId`:
+
+```bash
+curl -X POST \
+  "API_INVOKE_URL/payments" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "amount": 250000
+  }'
+```
+
+Kết quả mong đợi:
+
+```json
+{
+  "message": "orderId is required"
+}
+```
+
+2. Kiểm tra trường hợp số tiền không hợp lệ:
+
+```bash
+curl -X POST \
+  "API_INVOKE_URL/payments" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "orderId": "ORDER-1002",
+    "amount": -10000
+  }'
+```
+
+Kết quả mong đợi:
+
+```json
+{
+  "message": "amount must be greater than 0"
+}
+```
+
+![Kiểm tra dữ liệu không hợp lệ](/images/5-Workshop/5.4-CloudPay/api-invalid.png)
+
+Việc kiểm tra dữ liệu đầu vào giúp ngăn hệ thống tạo giao dịch từ các yêu cầu không hợp lệ.
+
+#### Tích hợp Payment API với Customer Web
+
+1. Mở mã nguồn của Customer Web Application.
+
+2. Khai báo địa chỉ Payment API:
+
+```javascript
+const API_BASE_URL =
+  "https://API_ID.execute-api.us-east-1.amazonaws.com";
+```
+
+3. Tạo hàm gửi yêu cầu thanh toán:
+
+```javascript
+async function createPayment() {
+  const orderId = document
+    .getElementById("orderId")
+    .value
+    .trim();
+
+  const amount = Number(
+    document.getElementById("amount").value
+  );
+
+  const result =
+    document.getElementById("paymentResult");
+
+  if (!orderId || amount <= 0) {
+    result.textContent =
+      "Vui lòng nhập mã đơn hàng và số tiền hợp lệ.";
+    return;
+  }
+
+  try {
+    result.textContent = "Đang tạo giao dịch...";
+
+    const response = await fetch(
+      `${API_BASE_URL}/payments`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          orderId,
+          amount
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.message || "Không thể tạo giao dịch"
+      );
+    }
+
+    result.innerHTML = `
+      <p><strong>Mã giao dịch:</strong> ${data.transactionId}</p>
+      <p><strong>Mã đơn hàng:</strong> ${data.orderId}</p>
+      <p><strong>Số tiền:</strong> ${data.amount}</p>
+      <p><strong>Trạng thái:</strong> ${data.status}</p>
+      <p><strong>Đường dẫn thanh toán:</strong> ${data.paymentUrl}</p>
+    `;
+  } catch (error) {
+    console.error(error);
+    result.textContent = `Lỗi: ${error.message}`;
+  }
+}
+```
+
+4. Thêm nút tạo thanh toán vào giao diện:
+
+```html
+<button type="button" onclick="createPayment()">
+  Tạo thanh toán
+</button>
+```
+
+5. Lưu lại mã nguồn và tải các file mới lên S3 Bucket của Customer Web.
+
+![Cập nhật Customer Web](/images/5-Workshop/5.4-CloudPay/update-customer-web.png)
+
+6. Mở Amazon CloudFront Distribution của Customer Web.
+
+7. Tạo Invalidation với đường dẫn:
+
+```text
+/*
+```
+
+8. Chờ trạng thái Invalidation chuyển thành **Completed**.
+
+9. Mở Customer CloudFront Domain:
+
+```text
+https://CUSTOMER_CLOUDFRONT_DOMAIN
+```
+
+10. Nhập dữ liệu thử nghiệm:
+
+```text
+Mã đơn hàng: ORDER-1003
+Số tiền: 500000
+```
+
+11. Chọn **Tạo thanh toán**.
+
+Kết quả mong đợi:
+
+- Customer Web gửi yêu cầu đến Payment API.
+- API Gateway gọi Lambda Function.
+- Lambda tạo mã giao dịch.
+- Giao diện hiển thị thông tin giao dịch.
+- Trạng thái giao dịch là `PENDING`.
+
+![Kết quả tạo thanh toán](/images/5-Workshop/5.4-CloudPay/customer-payment-result.png)
+
+#### Kiểm tra CloudWatch Logs
+
+1. Quay lại Lambda Function:
+
+```text
+cloudpay-create-payment
+```
+
+2. Chọn tab **Monitor**.
+
+3. Chọn **View CloudWatch logs**.
+
+4. Mở Log Group:
+
+```text
+/aws/lambda/cloudpay-create-payment
+```
+
+5. Chọn Log Stream mới nhất.
+
+6. Kiểm tra thông tin thực thi của Lambda.
+
+![Kiểm tra CloudWatch Logs](/images/5-Workshop/5.4-CloudPay/cloudwatch-logs.png)
+
+CloudWatch Logs cho phép kiểm tra:
+
+- Thời điểm Lambda được gọi.
+- Dữ liệu yêu cầu được xử lý.
+- Mã giao dịch được tạo.
+- Thời gian thực thi.
+- Lỗi xảy ra trong quá trình xử lý.
+
+{{% notice warning %}}
+Không ghi mật khẩu, Access Token, JWT Token hoặc thông tin thanh toán nhạy cảm vào Amazon CloudWatch Logs.
+{{% /notice %}}
+
+#### Một số lỗi thường gặp
+
+##### Lỗi CORS
+
+Kiểm tra:
+
+- Customer CloudFront Domain đã được thêm vào CORS.
+- Phương thức `POST` và `OPTIONS` đã được cho phép.
+- Header `Content-Type` đã được cho phép.
+- Origin URL không bị sai hoặc thừa dấu `/`.
+
+##### API trả về lỗi 404
+
+Kiểm tra:
+
+- Route `POST /payments` đã được tạo.
+- Invoke URL được sử dụng đúng.
+- Đường dẫn `/payments` đã được thêm vào URL.
+- Stage `$default` đang hoạt động.
+
+##### API trả về lỗi 500
+
+Kiểm tra:
+
+- Lambda Function đã được Deploy.
+- API Gateway có quyền gọi Lambda.
+- Mã nguồn Lambda không bị lỗi.
+- CloudWatch Logs có ghi nhận lỗi thực thi hay không.
+
+##### Website vẫn sử dụng mã nguồn cũ
+
+Tạo CloudFront Invalidation:
+
+```text
+/*
+```
+
+Sau đó tải lại website bằng:
+
+```text
+Ctrl + Shift + R
+```
+
+#### Tóm tắt
+
+Trong phần này, bạn đã:
+
+- Kiểm tra Lambda Function xử lý thanh toán.
+- Kiểm tra route `POST /payments`.
+- Kết nối Amazon API Gateway với AWS Lambda.
+- Cấu hình CORS cho Customer Web.
+- Kiểm tra API với dữ liệu hợp lệ.
+- Kiểm tra API với dữ liệu không hợp lệ.
+- Tích hợp Payment API với Customer Web.
+- Hiển thị thông tin giao dịch trên giao diện.
+- Kiểm tra quá trình xử lý bằng Amazon CloudWatch Logs.
+
+#### Kết quả mong đợi
+
+Sau khi hoàn thành phần này:
+
+- Customer Web có thể gửi yêu cầu thanh toán.
+- API Gateway tiếp nhận được yêu cầu.
+- Lambda xử lý được `orderId` và `amount`.
+- Hệ thống tạo được mã giao dịch.
+- Trạng thái giao dịch được trả về là `PENDING`.
+- Thông tin giao dịch được hiển thị trên Customer Web.
+- Log thực thi được ghi nhận trong Amazon CloudWatch.
+- Payment API đã sẵn sàng để mở rộng thêm chức năng lưu trữ giao dịch, xác thực JWT và xử lý webhook.
