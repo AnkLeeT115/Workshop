@@ -8,7 +8,7 @@ pre: " <b> 6. </b> "
 
 During my internship at **Amazon Web Services Vietnam Co., Ltd.** from **,April 20 2026** to **July 31, 2026**, I had the opportunity to learn, practice, and apply the knowledge acquired at university in a real-world working environment.
 
-Throughout the internship, I worked on the **Serverless E-commerce Backend for Genuine Scale Models Store** workshop project. This experience helped me strengthen my knowledge of **AWS Cloud services, Serverless architecture, backend development, API design, cloud deployment, and software development workflows**. It also improved my technical skills, teamwork, problem-solving abilities, and technical documentation writing.
+Throughout the internship, I worked on the **CloudPay** workshop project. This experience helped me strengthen my knowledge of **AWS Cloud services, Serverless architecture, backend development, API design, cloud deployment, and software development workflows**. It also improved my technical skills, teamwork, problem-solving abilities, and technical documentation writing.
 
 I always tried to complete assigned tasks on time, follow the company's regulations, and actively communicate with mentors and teammates to improve work efficiency and continuously develop my professional skills.
 
