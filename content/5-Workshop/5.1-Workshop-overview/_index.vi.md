@@ -75,4 +75,4 @@ Sau khi hoàn thành workshop, bạn sẽ hiểu cách:
 - Xây dựng chức năng quản trị dành cho Admin.
 - Clean-up tài nguyên để tránh phát sinh chi phí.
 
-![Tổng quan hệ thống thanh toán trên AWS](/images/5-Workshop/5.1-Workshop-overview/payment_architecture.png)
+![Tổng quan hệ thống thanh toán trên AWS](/images/5-Workshop/5.1-Workshop-overview/payment_architecture.jpg)

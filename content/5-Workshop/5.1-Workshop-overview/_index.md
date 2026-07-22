@@ -75,4 +75,4 @@ After completing this workshop, you will understand how to:
 - Build administrative features for transaction monitoring and recovery.
 - Clean up AWS resources to avoid unnecessary costs.
 
-![AWS Payment System Overview](/images/5-Workshop/5.1-Workshop-overview/payment_architecture.png)
+![AWS Payment System Overview](/images/5-Workshop/5.1-Workshop-overview/payment_architecture.jpg)
