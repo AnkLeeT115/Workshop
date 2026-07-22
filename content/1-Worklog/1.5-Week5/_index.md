@@ -10,58 +10,52 @@ pre: " <b> 1.5. </b> "
 
 ## Week 5 Objectives
 
-- Learn about **Microservices Architecture**, **Cloud-Native Architecture**, and the **Serverless model** on AWS.
-- Study how to design a serverless e-commerce backend for a genuine scale model marketplace.
-- Practice building scalable applications, automated deployment pipelines, and monitoring solutions using AWS services.
+- Understand **Microservices Architecture**, **Cloud-Native Architecture**, and **Serverless** model in the context of a payment system.
+- Design a serverless payment backend integrated with MoMo.
+- Practice building scalable payment processing, automated pipelines, and monitoring solutions using AWS services.
 
 ## Tasks Completed This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 2 | - Study the migration process from **Monolithic Architecture** to **Microservices Architecture**.<br>- Analyze how to divide the scale model e-commerce system into independent services:<br>&emsp;+ Product Service<br>&emsp;+ Order Service<br>&emsp;+ Inventory Service<br>- Learn AWS scalability and system management approaches. | 18/05/2026 | 18/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 3 | - Design a **Serverless Backend Architecture** for the e-commerce platform.<br>- Practice using AWS services:<br>&emsp;+ AWS Lambda for business logic processing<br>&emsp;+ API Gateway for REST API management<br>&emsp;+ DynamoDB for product, order and inventory storage<br>&emsp;+ Amazon S3 for product image storage<br>&emsp;+ SNS/SQS for asynchronous processing and notifications | 19/05/2026 | 19/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Develop APIs for the scale model marketplace:<br>&emsp;+ Product API<br>&emsp;+ Order API<br>&emsp;+ Inventory API<br>- Deploy a Single Page Application (SPA).<br>- Study Amazon Cognito authentication for customers and administrators. | 20/05/2026 | 20/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 5 | - Learn automated deployment using **AWS SAM** and **AWS CodePipeline**.<br>- Practice CI/CD workflow for Serverless Applications.<br>- Use Amazon CloudWatch and AWS X-Ray to monitor Lambda functions and API performance. | 21/05/2026 | 21/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 6 | - Explore AWS AI services.<br>- Research AI applications for the scale model marketplace:<br>&emsp;+ Product recommendation.<br>&emsp;+ Intelligent search.<br>&emsp;+ Product classification. | 22/05/2026 | 22/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 2 | - Study the migration from **Monolithic** to **Microservices Architecture** for payment systems.<br>- Analyze how to divide the payment system into independent services:<br>&emsp;+ Payment Initiation Service<br>&emsp;+ Webhook Processing Service<br>&emsp;+ Transaction Management Service<br>&emsp;+ Notification Service | 18/05/2026 | 18/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 3 | - Design a **Serverless Payment Backend Architecture**.<br>- Practice using key AWS services:<br>&emsp;+ AWS Lambda for payment logic<br>&emsp;+ API Gateway for REST API<br>&emsp;+ Amazon SQS & SNS for async processing<br>&emsp;+ DynamoDB / RDS for transaction storage<br>&emsp;+ S3 for storing payment receipts | 19/05/2026 | 19/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4 | - Develop core payment APIs:<br>&emsp;+ Create Payment URL API<br>&emsp;+ Webhook IPN Handler API<br>&emsp;+ Transaction Query API<br>- Study Amazon Cognito for Merchant & Admin authentication. | 20/05/2026 | 20/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos<br>MoMo API Docs |
+| 5 | - Implement automated deployment using **AWS SAM** and **AWS CodePipeline**.<br>- Set up CI/CD pipeline for payment services.<br>- Use Amazon CloudWatch and AWS X-Ray to monitor Lambda and transaction performance. | 21/05/2026 | 21/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 6 | - Explore AWS AI/ML services for payment system.<br>- Research AI applications:<br>&emsp;+ Fraud detection<br>&emsp;+ Transaction anomaly detection<br>&emsp;+ Smart receipt processing | 22/05/2026 | 22/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
 ## Week 5 Achievements
 
-- Understood how to migrate applications from **Monolithic Architecture** to **Microservices Architecture** and apply the concept to an e-commerce platform.
+- Understood how to migrate from **Monolithic** to **Microservices Architecture** and apply it to a payment processing system.
 
-- Learned how to design independent services for the genuine scale model marketplace:
-  - Product Service for managing product information.
-  - Order Service for handling customer orders.
-  - Inventory Service for managing product availability.
+- Designed independent services for MoMoPay AWS:
+  - Payment Initiation Service
+  - Webhook Processing Service
+  - Transaction Management Service
+  - Notification Service
 
-- Built an understanding of **Serverless Backend Architecture** using AWS services:
-  - **AWS Lambda** for business logic execution.
-  - **Amazon API Gateway** for API management.
-  - **Amazon DynamoDB** for storing products, orders and inventory data.
-  - **Amazon S3** for storing scale model images.
-  - **Amazon SNS/SQS** for asynchronous communication and notifications.
+- Built a solid understanding of **Serverless Payment Architecture** using AWS services:
+  - **AWS Lambda** for core payment logic
+  - **Amazon API Gateway** for secure API management
+  - **Amazon SQS / SNS** for asynchronous processing and notifications
+  - **DynamoDB / RDS** for transaction data
+  - **Amazon S3** for receipt storage
 
-- Developed knowledge of designing e-commerce APIs:
-  - Product management API.
-  - Order processing API.
-  - Inventory checking API.
+- Developed key payment APIs:
+  - Create Payment URL
+  - MoMo IPN Webhook Handler
+  - Transaction Status Query
 
-- Integrated **Amazon Cognito** for:
-  - User authentication.
-  - Role-based access control between customers and administrators.
+- Integrated **Amazon Cognito** for secure authentication and role-based access (Merchant & Admin).
 
-- Understood automated deployment workflows:
-  - AWS SAM for managing Serverless applications.
-  - AWS CodePipeline for CI/CD automation.
-  - CloudWatch and X-Ray for monitoring and troubleshooting.
+- Mastered automated deployment workflows:
+  - AWS SAM for Serverless applications
+  - AWS CodePipeline for CI/CD
+  - CloudWatch + X-Ray for monitoring and troubleshooting
 
-- Explored AI applications in the scale model marketplace:
-  - Product recommendation.
-  - Intelligent product search.
-  - Product classification.
+- Explored AI applications in payment systems:
+  - Fraud detection
+  - Anomaly detection
+  - Intelligent receipt processing
 
-- Gained additional knowledge about modern cloud application development:
-  - Microservices Architecture.
-  - Serverless Computing.
-  - CI/CD Automation.
-  - Cloud Monitoring.
-  - AI Integration.
+- Gained comprehensive knowledge of modern payment system development on AWS.

@@ -8,37 +8,32 @@ pre: " <b> 1.12. </b> "
 
 # Week 12 Worklog
 
-## Week 12 Objectives:
+## Week 12 Objectives
 
-- Complete backend features related to product management, order processing, and product image storage on AWS.
-- Develop product search, filtering, and review APIs for the Serverless e-commerce platform.
-- Complete user authentication features and improve the application interface.
+- Complete core backend features for the **MoMoPay AWS Payment System**.
+- Develop payment creation, webhook processing, transaction management, and notification features.
+- Perform full system testing, optimization, and prepare for final deployment.
 
-## Tasks to be carried out this week:
+## Tasks Completed This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | ---- | ---------- | --------------- | ------------------ |
-| 2 | - Develop the order management module.<br>- Build the order creation workflow, inventory validation, and transaction data storage.<br>- Integrate Amazon S3 for storing genuine scale model product images and related data. | 07/13/2026 | 07/13/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 3 | - Develop product review APIs.<br>- Build the review processing workflow from user submission to data storage.<br>- Write integration tests for valid data, invalid data, and system error scenarios. | 07/14/2026 | 07/14/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Develop product catalog search and filtering features.<br>- Implement filters based on model name, brand, category, price, and official product status.<br>- Verify API responses and ensure accurate search results. | 07/15/2026 | 07/15/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 5 | - Integrate Amazon Cognito for user authentication and authorization.<br>- Implement role management between customers and administrators.<br>- Complete interface pages including Home, Product Catalog, Favorites, and User Profile. | 07/16/2026 | 07/16/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 6 | - Perform overall system testing for the e-commerce platform.<br>- Fix issues discovered during testing.<br>- Optimize API performance, clean up source code, and prepare the final project release. | 07/17/2026 | 07/17/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 2 | - Develop the payment processing module.<br>- Build payment URL creation and transaction recording workflow.<br>- Integrate Amazon S3 for storing payment receipts. | 13/07/2026 | 13/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 3 | - Implement MoMo IPN Webhook processing.<br>- Build webhook signature verification and transaction update logic.<br>- Write integration tests for successful and failed payments. | 14/07/2026 | 14/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4 | - Develop transaction query and history APIs.<br>- Implement search and filtering by date, status, amount, and merchant. | 15/07/2026 | 15/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 5 | - Integrate Amazon Cognito for user authentication and authorization.<br>- Implement role management (Merchant & Admin).<br>- Complete notification system using SNS (Email/SMS). | 16/07/2026 | 16/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 6 | - Perform full system testing for the payment platform.<br>- Fix bugs discovered during testing.<br>- Optimize performance, clean up code, and prepare final project documentation and demo. | 17/07/2026 | 17/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
-## Week 12 Achievements:
+## Week 12 Achievements
 
-- Completed the order management module, including order creation, inventory validation, and transaction storage using DynamoDB.
+- Completed the core payment processing module, including payment URL creation and transaction recording.
 
-- Integrated Amazon S3 for managing genuine scale model product images and supporting system data storage.
+- Successfully implemented MoMo IPN Webhook processing with signature verification.
 
-- Successfully developed product review APIs and tested review workflows.
+- Developed transaction query and filtering APIs.
 
-- Completed product search and filtering features based on:
-  - Model name.
-  - Brand.
-  - Category.
-  - Product price.
-  - Official product status.
+- Integrated Amazon Cognito for secure authentication and role-based access control.
 
-- Integrated Amazon Cognito for user authentication and role-based access control between customers and administrators.
+- Built notification system using Amazon SNS for email/SMS alerts.
 
-- Improved the system interface, fixed testing issues, optimized source code, and prepared the final project release.
+- Performed comprehensive system testing, fixed issues, optimized performance, and prepared the final project for deployment and presentation.

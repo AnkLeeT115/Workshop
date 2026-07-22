@@ -10,17 +10,17 @@ pre: " <b> 1.6. </b> "
 
 ## Week 6 Objectives
 
-- Learn the process of packaging, deploying, and managing Container applications on AWS.
-- Practice deploying Microservices for the Genuine Scale Models E-commerce Backend.
+- Understand the process of packaging, deploying, and managing Container applications on AWS.
+- Practice deploying Microservices for the MoMo Payment Backend.
 - Build CI/CD workflows and monitor Container-based application environments.
 
 ## Tasks Completed This Week
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 2 | - Learn Docker and the application packaging process.<br>- Build Docker Images for system components:<br>&emsp;+ Product Service.<br>&emsp;+ Order Service.<br>&emsp;+ Inventory Service.<br>- Manage Docker Images for AWS deployment. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 2 | - Learn Docker and the application packaging process.<br>- Build Docker Images for system components:<br>&emsp;+ Payment Service<br>&emsp;+ Webhook Service<br>&emsp;+ Transaction Service<br>- Manage Docker Images for AWS deployment. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 | 3 | - Deploy Container applications on AWS.<br>- Study Amazon ECS, Amazon EKS and Container Cluster management.<br>- Configure system resources and verify service operation. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Learn Microservices deployment using Docker and AWS Fargate.<br>- Package and deploy independent services:<br>&emsp;+ Product Management Service.<br>&emsp;+ Order Processing Service.<br>&emsp;+ Inventory Management Service.<br>- Evaluate system scalability. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4 | - Learn Microservices deployment using Docker and AWS Fargate.<br>- Package and deploy independent services:<br>&emsp;+ Payment Initiation Service<br>&emsp;+ Webhook Processing Service<br>&emsp;+ Transaction Management Service<br>- Evaluate system scalability. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 | 5 | - Build a CI/CD pipeline using AWS CodePipeline and GitHub.<br>- Automate:<br>&emsp;+ Docker Image building.<br>&emsp;+ Application testing.<br>&emsp;+ Microservices deployment on AWS. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 | 6 | - Configure Container monitoring and resource management.<br>- Monitor service status and performance.<br>- Apply security practices to improve system stability and reliability. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
@@ -36,10 +36,10 @@ pre: " <b> 1.6. </b> "
   - Amazon EKS.
   - AWS Fargate.
 
-- Applied Container technology to the Microservices architecture of the scale model marketplace:
-  - Product Service for product management.
-  - Order Service for order processing.
-  - Inventory Service for stock management.
+- Applied Container technology to the Microservices architecture of MoMoPay AWS:
+  - Payment Service
+  - Webhook Processing Service
+  - Transaction Management Service
 
 - Learned how to build scalable Microservices systems:
   - Separate business functions into independent services.

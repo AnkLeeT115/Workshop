@@ -6,48 +6,29 @@ chapter: false
 pre: " <b> 1.11. </b> "
 ---
 
-# Nhật ký công việc tuần 11
+# Worklog Tuần 11
 
 ## Mục tiêu tuần 11
 
-- Triển khai cơ chế xác thực và phân quyền người dùng bằng **Amazon Cognito và JWT**.
-- Xây dựng chức năng xử lý đơn hàng và kiểm tra tồn kho cho hệ thống thương mại điện tử.
-- Kiểm thử API và cải thiện quy trình CI phục vụ triển khai Serverless Backend.
+- Triển khai xác thực và ủy quyền người dùng bằng **Amazon Cognito và JWT**.
+- Phát triển tính năng xử lý thanh toán, webhook và xác thực giao dịch.
+- Thực hiện kiểm thử API và cải thiện CI workflow cho backend thanh toán.
 
-## Các công việc thực hiện trong tuần
+## Các công việc đã thực hiện trong tuần này
 
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | --- | --- | --- | --- |
-| 2 | - Cấu hình **Amazon Cognito User Pool** cho khách hàng và quản trị viên.<br>- Xây dựng luồng đăng ký và đăng nhập người dùng.<br>- Triển khai tạo và xác thực JWT token cho các request cần xác thực. | 06/07/2026 | 06/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 3 | - Xây dựng cơ chế phân quyền sử dụng JWT và Cognito Groups.<br>- Cấu hình quyền truy cập cho chức năng khách hàng và quản trị viên.<br>- Kiểm tra các API được bảo vệ thông qua API Gateway. | 07/07/2026 | 07/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Xây dựng quy trình xử lý đơn hàng bằng AWS Lambda.<br>- Triển khai các chức năng:<br>&emsp;+ Tạo đơn hàng<br>&emsp;+ Kiểm tra số lượng sản phẩm<br>&emsp;+ Cập nhật tồn kho<br>&emsp;+ Cập nhật trạng thái đơn hàng | 08/07/2026 | 08/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 5 | - Viết kiểm thử API cho các chức năng sản phẩm, tồn kho và đơn hàng.<br>- Kiểm tra các trường hợp xác thực:<br>&emsp;+ Người dùng hợp lệ<br>&emsp;+ Token không hợp lệ<br>&emsp;+ Truy cập không có quyền | 09/07/2026 | 09/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 6 | - Cải thiện quy trình CI cho ứng dụng Serverless.<br>- Cấu hình tự động chạy kiểm thử trước khi triển khai.<br>- Rà soát Lambda Function, API Gateway và hoạt động với DynamoDB. | 10/07/2026 | 10/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --------- | ------------ | --------------- | ------------------ |
+| 2   | - Cấu hình **Amazon Cognito User Pool** cho Merchant và Administrator.<br>- Triển khai luồng đăng ký và đăng nhập.<br>- Tạo và validate JWT token. | 06/07/2026 | 06/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 3   | - Triển khai ủy quyền bằng JWT và Cognito groups.<br>- Cấu hình kiểm soát truy cập cho Merchant và Admin.<br>- Test protected API endpoints qua API Gateway. | 07/07/2026 | 07/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4   | - Phát triển workflow xử lý thanh toán bằng AWS Lambda.<br>- Triển khai:<br>&emsp;+ Tạo Payment URL<br>&emsp;+ Xử lý MoMo IPN Webhook<br>&emsp;+ Validate giao dịch<br>&emsp;+ Cập nhật trạng thái giao dịch | 08/07/2026 | 08/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 5   | - Viết test cho các API thanh toán, webhook và transaction.<br>- Test các kịch bản xác thực (valid user, invalid token, unauthorized). | 09/07/2026 | 09/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 6   | - Cải thiện CI workflow cho ứng dụng thanh toán Serverless.<br>- Cấu hình test tự động trước khi deploy.<br>- Review Lambda, API Gateway và DynamoDB. | 10/07/2026 | 10/07/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
 ## Kết quả đạt được tuần 11
 
-- Hoàn thiện cơ chế xác thực bằng **Amazon Cognito**:
-  - Xây dựng luồng đăng ký và đăng nhập cho khách hàng, quản trị viên.
-  - Tích hợp xác thực JWT token.
-  - Bảo vệ các API backend bằng cơ chế phân quyền.
-
-- Hoàn thiện chức năng quản lý quyền truy cập:
-  - Sử dụng Cognito Groups để quản lý vai trò.
-  - Phân biệt quyền giữa khách hàng và quản trị viên.
-
-- Xây dựng chức năng xử lý đơn hàng:
-  - Tạo workflow đặt hàng bằng AWS Lambda.
-  - Kiểm tra tình trạng sản phẩm trước khi đặt hàng.
-  - Cập nhật số lượng tồn kho sau khi giao dịch thành công.
-  - Quản lý trạng thái đơn hàng.
-
-- Hoàn thành kiểm thử backend:
-  - Kiểm thử Product API.
-  - Kiểm thử Inventory API.
-  - Kiểm thử Order API.
-  - Kiểm tra các trường hợp xác thực và phân quyền.
-
-- Cải thiện quy trình phát triển:
-  - Tích hợp kiểm thử tự động vào CI pipeline.
-  - Nâng cao độ ổn định khi triển khai Serverless Backend.
-  - Kiểm tra sự kết nối giữa Lambda, API Gateway và DynamoDB.
+- Triển khai thành công xác thực bằng **Amazon Cognito** với JWT.
+- Xây dựng cơ chế ủy quyền theo role (Merchant & Admin).
+- Hoàn thành các chức năng xử lý thanh toán cốt lõi (Tạo Payment URL, Xử lý Webhook, Quản lý giao dịch).
+- Thực hiện kiểm thử API toàn diện và các kịch bản bảo mật.
+- Cải thiện quy trình CI/CD với automated testing.
+- Nâng cao độ tin cậy của backend thanh toán Serverless.

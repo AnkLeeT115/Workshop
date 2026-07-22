@@ -6,29 +6,29 @@ chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-# Nhật ký công việc tuần 6
+# Worklog Tuần 6
 
 ## Mục tiêu tuần 6
 
-- Tìm hiểu quy trình đóng gói, triển khai và quản lý ứng dụng Container trên AWS.
-- Thực hành triển khai các Microservices của hệ thống thương mại điện tử bán mô hình chính hãng.
-- Xây dựng quy trình CI/CD và giám sát môi trường Container trên AWS.
+- Hiểu quy trình đóng gói, triển khai và quản lý ứng dụng Container trên AWS.
+- Thực hành triển khai các Microservices cho backend hệ thống thanh toán MoMo.
+- Xây dựng CI/CD workflow và giám sát môi trường ứng dụng Container.
 
-## Các công việc cần triển khai trong tuần này:
+## Các công việc đã thực hiện trong tuần này
 
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | --- | --- | --- | --- |
-| 2 | - Tìm hiểu Docker và quy trình đóng gói ứng dụng.<br>- Thực hành xây dựng Docker Image cho các thành phần của hệ thống:<br>&emsp;+ Product Service.<br>&emsp;+ Order Service.<br>&emsp;+ Inventory Service.<br>- Quản lý Docker Image phục vụ triển khai trên AWS. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 3 | - Triển khai thử nghiệm ứng dụng Container trên AWS.<br>- Tìm hiểu Amazon ECS, Amazon EKS và cách quản lý Container Cluster.<br>- Cấu hình tài nguyên hệ thống và kiểm tra trạng thái hoạt động của các service. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Nghiên cứu cách triển khai Microservices bằng Docker và AWS Fargate.<br>- Đóng gói và triển khai các service độc lập:<br>&emsp;+ Product Management Service.<br>&emsp;+ Order Processing Service.<br>&emsp;+ Inventory Management Service.<br>- Đánh giá khả năng mở rộng của hệ thống. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 5 | - Xây dựng quy trình CI/CD bằng AWS CodePipeline và GitHub.<br>- Tự động hóa quá trình:<br>&emsp;+ Build Docker Image.<br>&emsp;+ Kiểm thử ứng dụng.<br>&emsp;+ Triển khai Microservices lên AWS. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 6 | - Cấu hình giám sát và quản lý tài nguyên Container.<br>- Sử dụng công cụ monitoring để theo dõi trạng thái service.<br>- Áp dụng các biện pháp bảo mật nhằm đảm bảo tính ổn định và an toàn của hệ thống. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --------- | ------------ | --------------- | ------------------ |
+| 2   | - Học Docker và quy trình đóng gói ứng dụng.<br>- Build Docker Images cho các thành phần hệ thống:<br>&emsp;+ Payment Service<br>&emsp;+ Webhook Service<br>&emsp;+ Transaction Service<br>- Quản lý Docker Images để triển khai trên AWS. | 25/05/2026 | 25/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 3   | - Triển khai ứng dụng Container trên AWS.<br>- Tìm hiểu Amazon ECS, Amazon EKS và quản lý Container Cluster.<br>- Cấu hình tài nguyên hệ thống và kiểm tra hoạt động service. | 26/05/2026 | 26/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4   | - Triển khai Microservices sử dụng Docker và AWS Fargate.<br>- Đóng gói và triển khai các service độc lập:<br>&emsp;+ Payment Initiation Service<br>&emsp;+ Webhook Processing Service<br>&emsp;+ Transaction Management Service<br>- Đánh giá khả năng scale của hệ thống. | 27/05/2026 | 27/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 5   | - Xây dựng CI/CD pipeline sử dụng AWS CodePipeline và GitHub.<br>- Tự động hóa:<br>&emsp;+ Build Docker Image<br>&emsp;+ Kiểm thử ứng dụng<br>&emsp;+ Triển khai Microservices lên AWS. | 28/05/2026 | 28/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 6   | - Cấu hình giám sát và quản lý tài nguyên Container.<br>- Giám sát trạng thái và hiệu suất service.<br>- Áp dụng các best practices về bảo mật để tăng tính ổn định và đáng tin cậy của hệ thống. | 29/05/2026 | 29/05/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
 ## Kết quả đạt được tuần 6
 
-- Hiểu quy trình đóng gói ứng dụng bằng **Docker**:
-  - Xây dựng Docker Image.
-  - Quản lý Image phục vụ triển khai.
+- Hiểu cách đóng gói ứng dụng bằng **Docker**:
+  - Build Docker Images.
+  - Quản lý Images để triển khai.
   - Hiểu vai trò của Container trong phát triển ứng dụng Cloud.
 
 - Thực hành triển khai ứng dụng Container trên AWS:
@@ -36,33 +36,33 @@ pre: " <b> 1.6. </b> "
   - Amazon EKS.
   - AWS Fargate.
 
-- Áp dụng Container vào kiến trúc Microservices của hệ thống bán mô hình:
-  - Product Service quản lý sản phẩm.
-  - Order Service xử lý đơn hàng.
-  - Inventory Service quản lý tồn kho.
+- Áp dụng công nghệ Container vào kiến trúc Microservices của hệ thống thanh toán MoMoPay:
+  - Payment Service
+  - Webhook Processing Service
+  - Transaction Management Service
 
-- Hiểu cách triển khai hệ thống Microservices có khả năng mở rộng:
-  - Tách các chức năng thành service độc lập.
-  - Dễ dàng mở rộng từng thành phần khi lượng truy cập tăng cao.
-  - Quản lý tài nguyên hiệu quả trên Cloud.
+- Nắm cách xây dựng hệ thống Microservices scalable:
+  - Tách biệt chức năng kinh doanh thành các service độc lập.
+  - Scale từng service theo nhu cầu traffic.
+  - Quản lý tài nguyên Cloud hiệu quả.
 
-- Xây dựng quy trình CI/CD với:
+- Xây dựng workflow CI/CD sử dụng:
   - AWS CodePipeline.
   - GitHub.
 
-- Tự động hóa các bước:
+- Tự động hóa:
   - Build ứng dụng.
-  - Kiểm thử.
+  - Testing.
   - Triển khai Container.
 
-- Nắm được cách giám sát và bảo mật môi trường Container:
-  - Theo dõi trạng thái service.
-  - Quản lý tài nguyên.
-  - Cải thiện tính ổn định và an toàn của hệ thống.
+- Học các thực hành giám sát và bảo mật Container:
+  - Giám sát trạng thái service.
+  - Quản lý sử dụng tài nguyên.
+  - Tăng cường tính ổn định và bảo mật hệ thống.
 
-- Tích lũy kiến thức thực tế về:
+- Có kinh nghiệm thực tế về:
   - Docker Containerization.
   - Microservices Deployment.
   - AWS ECS/EKS/Fargate.
   - CI/CD Automation.
-  - Cloud Monitoring và Security.
+  - Cloud Monitoring & Security.

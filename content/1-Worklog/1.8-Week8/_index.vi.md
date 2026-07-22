@@ -6,62 +6,54 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
-# Nhật ký công việc tuần 8
+# Worklog Tuần 8
 
 ## Mục tiêu tuần 8
 
-- Tìm hiểu các dịch vụ **AI/ML trên AWS** và khả năng ứng dụng trong hệ thống thương mại điện tử hiện đại.
-- Nghiên cứu cách ứng dụng **Generative AI, Machine Learning và các mô hình AI** để hỗ trợ tìm kiếm sản phẩm, gợi ý sản phẩm và tự động hóa.
-- Thực hành quy trình xây dựng, triển khai và quản lý các giải pháp AI/ML trên AWS.
+- Học về các dịch vụ **AI/ML trên AWS** và ứng dụng trong hệ thống thanh toán.
+- Hiểu cách Generative AI, Machine Learning hỗ trợ phát hiện gian lận, phân tích giao dịch và tự động hóa.
+- Thực hành xây dựng, triển khai và quản lý giải pháp AI/ML cho thanh toán.
 
-## Các công việc thực hiện trong tuần
+## Các công việc đã thực hiện trong tuần này
 
-| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
-| --- | ---- | ---------- | --------------- | --------------- |
-| 2 | - Tìm hiểu các dịch vụ **AI/ML trên AWS**.<br>- Nghiên cứu **Foundation Models** và **Generative AI**.<br>- Tìm hiểu ứng dụng **LLM** trong việc tạo mô tả sản phẩm, hỗ trợ tìm kiếm thông minh và chatbot chăm sóc khách hàng. | 08/06/2026 | 08/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 3 | - Tìm hiểu công nghệ **Computer Vision**.<br>- Nghiên cứu phân tích hình ảnh và nhận diện đối tượng.<br>- Tìm hiểu ứng dụng AI trong phân loại hình ảnh sản phẩm và quản lý catalog. | 09/06/2026 | 09/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 4 | - Nghiên cứu các kỹ thuật **Natural Language Processing (NLP)**.<br>- Tìm hiểu xử lý văn bản, phân tích đánh giá khách hàng và cải thiện chức năng tìm kiếm sản phẩm. | 10/06/2026 | 10/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 5 | - Tìm hiểu quy trình xây dựng, lắp ráp và triển khai mô hình **Machine Learning**.<br>- Nghiên cứu **MLOps** trong quản lý, giám sát và cải thiện mô hình AI. | 11/06/2026 | 11/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
-| 6 | - Tìm hiểu **Responsible AI**.<br>- Nghiên cứu các nguyên tắc phát triển hệ thống AI minh bạch, an toàn và có trách nhiệm. | 12/06/2026 | 12/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --------- | ------------ | --------------- | ------------------ |
+| 2   | - Tìm hiểu các dịch vụ **AI/ML trên AWS**.<br>- Nghiên cứu **Foundation Models** và **Generative AI**.<br>- Khám phá ứng dụng LLM cho phân loại giao dịch thông minh và hỗ trợ khách hàng. | 08/06/2026 | 08/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 3   | - Học về **Computer Vision** và **Anomaly Detection**.<br>- Nghiên cứu phân tích hình ảnh biên lai và nhận diện mẫu gian lận. | 09/06/2026 | 09/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 4   | - Tìm hiểu kỹ thuật **Natural Language Processing (NLP)**.<br>- Phân tích văn bản mô tả giao dịch và phản hồi khách hàng. | 10/06/2026 | 10/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 5   | - Học quy trình xây dựng, huấn luyện và triển khai **Machine Learning models**.<br>- Nghiên cứu **MLOps** để quản lý mô hình phát hiện gian lận. | 11/06/2026 | 11/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
+| 6   | - Học về **Responsible AI**.<br>- Các nguyên tắc phát triển AI minh bạch, an toàn và đạo đức trong thanh toán. | 12/06/2026 | 12/06/2026 | https://cloudjourney.awsstudygroup.com/<br>https://www.youtube.com/@AWSStudyGroup/videos |
 
 ## Kết quả đạt được tuần 8
 
-- Hiểu các dịch vụ **AI/ML trên AWS** và khả năng ứng dụng thực tế:
-  - Foundation Models.
-  - Generative AI.
-  - Large Language Models (LLM).
-  - Tự động hóa bằng AI.
+- Hiểu rõ các dịch vụ **AI/ML trên AWS** và ứng dụng trong thanh toán:
+  - Foundation Models và Generative AI.
+  - Anomaly Detection cho phòng chống gian lận.
 
-- Tìm hiểu ứng dụng **Computer Vision**:
-  - Phân tích hình ảnh sản phẩm.
-  - Nhận diện và phân loại đối tượng.
-  - Hỗ trợ quản lý danh mục sản phẩm.
+- Biết cách áp dụng **Computer Vision** và **Anomaly Detection**:
+  - Xử lý hình ảnh biên lai.
+  - Nhận diện mẫu gian lận.
 
-- Hiểu các kỹ thuật **Natural Language Processing (NLP)**:
-  - Phân tích dữ liệu văn bản.
-  - Xử lý đánh giá khách hàng.
-  - Cải thiện khả năng tìm kiếm sản phẩm.
+- Nắm được **Natural Language Processing (NLP)**:
+  - Phân tích mô tả giao dịch.
+  - Xử lý phản hồi khách hàng.
 
-- Nắm được vòng đời phát triển mô hình **Machine Learning**:
-  - Thu thập và xử lý dữ liệu.
-  - Lắp ráp mô hình.
-  - Triển khai mô hình.
-  - Giám sát hiệu năng.
+- Hiểu vòng đời **Machine Learning**:
+  - Chuẩn bị dữ liệu.
+  - Huấn luyện mô hình.
+  - Triển khai.
+  - Giám sát.
 
-- Hiểu về **MLOps**:
-  - Quản lý vòng đời mô hình AI.
-  - Tự động hóa triển khai.
-  - Theo dõi và bảo trì mô hình.
+- Thành thạo **MLOps** để quản lý mô hình AI trong môi trường thanh toán production.
 
 - Hiểu các nguyên tắc **Responsible AI**:
-  - Xây dựng hệ thống AI minh bạch.
-  - Bảo vệ dữ liệu người dùng.
-  - Phát triển AI an toàn và có trách nhiệm.
+  - Xây dựng AI minh bạch và công bằng.
+  - Bảo vệ dữ liệu thanh toán nhạy cảm.
+  - Phát triển AI đạo đức cho phát hiện gian lận.
 
-- Bổ sung kiến thức về:
+- Có kiến thức thực tế về:
   - AWS AI/ML Services.
-  - Generative AI.
-  - Computer Vision.
-  - NLP.
+  - Generative AI trong thanh toán.
+  - Mô hình Fraud Detection.
   - MLOps.
   - Responsible AI.
